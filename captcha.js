@@ -1,4 +1,4 @@
-var Canvas = require('canvas'),
+var canvas = require('canvas'),
     fs = require('fs');
 
 const CHARACTERS = '3456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ3456789';
@@ -8,7 +8,7 @@ var Captcha = exports.Captcha = function(length) {
   this._width = 90;
   this._height = 30;
 
-  this._canvas = new Canvas(this._width, this._height),
+  this._canvas = canvas.createCanvas(this._width, this._height),
   this._ctx = this._canvas.getContext('2d'),
 
   //this._code = "";
@@ -23,7 +23,7 @@ Captcha.prototype.refresh = function() {
 
   this._ctx.fillStyle = "#efe";
   this._ctx.fillRect(0, 0, this._width, this._height);
-  this._ctx.font = "bold 22px purisa";
+  this._ctx.font = "bold 22px sheepsans"; // purisa
   this._ctx.lineWidth = 1;
   this._ctx.textAlign = "center";
   this._ctx.strokeStyle = "#080";
